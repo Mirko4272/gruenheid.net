@@ -1,1 +1,21 @@
-{"name":"Mirko Grünheid","short_name":"Grünheid","start_url":"/","display":"standalone","background_color":"#0f1115","theme_color":"#0f1115","icons":[{"src":"/favicon.svg","sizes":"64x64","type":"image/svg+xml"}]}
+{
+  "name": "Mirko Grünheid",
+  "short_name": "Gruenheid",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
