@@ -195,22 +195,36 @@ h1 {
 footer {
     position: fixed;
     left: 8vw;
+    right: 8vw;
     bottom: 40px;
     z-index: 20;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+    color: rgba(255,255,255,.72);
+}
+
+.footer-left {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.72);
-    opacity: 0.75;
 }
 
-footer img {
+.footer-left img {
     height: 22px;
 }
 
-footer span {
-    opacity: 0.92;
+.footer-link {
+    color: rgba(255,255,255,.72);
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.footer-link:hover {
+    color: #F2CC86;
 }
 
 /* Legal Pages: Impressum / Datenschutz */
