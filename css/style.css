@@ -243,7 +243,8 @@ body.legal .overlay {
     position: relative;
     z-index: 10;
     max-width: 760px;
-    padding: 90px 0 40px 8vw;
+    padding: 90px 0 40px;
+    margin-left: calc(8vw + 40px);
     animation: fadeIn 1.2s ease;
 }
 
@@ -301,22 +302,30 @@ body.legal .overlay {
 .legal-box a:hover,
 .legal-back:hover {
     opacity: 0.8;
+    color: #fff;
+    transform: translateX(-4px);
 }
+
 
 .legal-back {
     display: inline-block;
-    margin-top: 28px;
+    margin-top: 32px;
     font-size: 18px;
+    font-weight: 500;
+    color: #F2CC86;
+    text-decoration: none;
+    transition: transform .25s ease, color .25s ease;
 }
 
 .legal-footer {
     position: relative;
     left: auto;
     bottom: auto;
-    margin: 40px 0 30px 8vw;
+    margin: 40px 0 30px calc(8vw + 40px;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.72);
     opacity: 0.75;
+    
 }
 
 /* Animation */
