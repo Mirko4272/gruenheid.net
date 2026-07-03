@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Home Assistant">
+  <rect width="64" height="64" rx="15" fill="#41BDF5"/>
+  <path d="M32 8 10 27.5h5.8V53h32.4V27.5H54L32 8Z" fill="none" stroke="#fff" stroke-width="4.4" stroke-linejoin="round"/>
+  <path d="M23 39.5a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm18 0a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Zm-9 9.8a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" fill="#fff"/>
+  <path d="M26.7 35.3h10.6M32 40.9V25.5M32 25.5l-5.2-5.2M32 25.5l5.2-5.2" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
