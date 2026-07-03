@@ -313,7 +313,10 @@ body.legal .overlay {
     position: relative;
     left: auto;
     bottom: auto;
-    margin: 20px 0 30px 8vw;
+    margin: 40px 0 30px 8vw;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.72);
+    opacity: 0.75;
 }
 
 /* Animation */
