@@ -1,9 +1,12 @@
 /* ==========================================================
    gruenheid.net
-   Version 1.0 Final
+   style.css — Version 1.0 Final
    ========================================================== */
 
-/* Reset */
+
+/* ----------------------------------------------------------
+   Reset
+   ---------------------------------------------------------- */
 
 * {
     margin: 0;
@@ -11,7 +14,10 @@
     box-sizing: border-box;
 }
 
-/* Base */
+
+/* ----------------------------------------------------------
+   Base
+   ---------------------------------------------------------- */
 
 html,
 body {
@@ -22,11 +28,19 @@ body {
     color: #fff;
 }
 
-/* Background */
+body {
+    overflow-x: hidden;
+}
+
+
+/* ----------------------------------------------------------
+   Background
+   ---------------------------------------------------------- */
 
 .background {
     position: fixed;
     inset: 0;
+    z-index: 0;
     background-image: url("../assets/hero-background.webp");
     background-position: center center;
     background-size: cover;
@@ -35,21 +49,11 @@ body {
     animation: zoom 18s ease forwards;
 }
 
-@keyframes zoom {
-    from {
-        transform: scale(1.04);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
-/* Overlay */
-
 .overlay {
     position: fixed;
     inset: 0;
+    z-index: 1;
+    pointer-events: none;
     background:
         radial-gradient(
             circle at top right,
@@ -65,18 +69,21 @@ body {
         );
 }
 
-/* Startseite */
+
+/* ----------------------------------------------------------
+   Startseite
+   ---------------------------------------------------------- */
 
 .content {
     position: relative;
     z-index: 10;
     min-height: 100vh;
+    max-width: 820px;
+    padding-top: 190px;
+    padding-left: 8vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: 8vw;
-    padding-top: 190px;
-    max-width: 820px;
     animation: fadeIn 1.2s ease;
 }
 
@@ -110,12 +117,12 @@ h1 {
 .card {
     width: 720px;
     max-width: 90vw;
+    padding: 30px 34px;
     display: flex;
     align-items: center;
     gap: 26px;
-    padding: 30px 34px;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
     border-radius: 32px;
     border: 1px solid rgba(255, 255, 255, 0.22);
     background: rgba(44, 48, 56, 0.34);
@@ -142,13 +149,14 @@ h1 {
     width: 72px;
     height: 72px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex: 0 0 auto;
 }
 
 .icon img {
     width: 60px;
+    display: block;
 }
 
 .text {
@@ -162,9 +170,9 @@ h1 {
 }
 
 .text span {
-    color: #d6b06a;
     font-size: 22px;
     font-weight: 300;
+    color: #d6b06a;
 }
 
 .arrow {
@@ -174,11 +182,11 @@ h1 {
     align-items: center;
     justify-content: center;
     opacity: 0.48;
-    color: rgba(255, 255, 255, 0.82);
 }
 
 .arrow img {
     width: 18px;
+    display: block;
     opacity: 0.65;
     transition:
         opacity 0.25s ease,
@@ -190,7 +198,10 @@ h1 {
     transform: translateX(4px);
 }
 
-/* Footer */
+
+/* ----------------------------------------------------------
+   Footer
+   ---------------------------------------------------------- */
 
 footer {
     position: fixed;
@@ -198,13 +209,13 @@ footer {
     right: 8vw;
     bottom: 40px;
     z-index: 20;
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    justify-content: space-between;
+    gap: 24px;
     font-size: 14px;
-    color: rgba(255,255,255,.72);
+    color: rgba(255, 255, 255, 0.72);
+    opacity: 0.75;
 }
 
 .footer-left {
@@ -213,38 +224,47 @@ footer {
     gap: 12px;
 }
 
-.footer-left img {
+.footer-left img,
+footer img {
     height: 22px;
+    display: block;
+}
+
+.footer-left span,
+footer span {
+    opacity: 0.92;
 }
 
 .footer-link {
-    color: rgba(255,255,255,.72);
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
-    transition: color .25s ease;
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
 }
 
 .footer-link:hover {
     color: #F2CC86;
+    opacity: 1;
 }
 
-/* Legal Pages: Impressum / Datenschutz */
+
+/* ----------------------------------------------------------
+   Legal Pages: Impressum / Datenschutz
+   ---------------------------------------------------------- */
 
 body.legal {
+    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-body.legal .background,
-body.legal .overlay {
-    position: fixed;
 }
 
 .legal-page {
     position: relative;
     z-index: 10;
-    max-width: 760px;
+    width: min(760px, calc(100% - 16vw));
     padding: 90px 0 40px;
-    margin-left: calc(8vw + 40px);
+    margin-left: 8vw;
     animation: fadeIn 1.2s ease;
 }
 
@@ -280,6 +300,7 @@ body.legal .overlay {
 .legal-box h2 {
     font-size: 22px;
     font-weight: 600;
+    line-height: 1.25;
     margin: 26px 0 10px;
 }
 
@@ -296,39 +317,56 @@ body.legal .overlay {
 .legal-back {
     color: #d6b06a;
     text-decoration: none;
-    transition: opacity 0.25s ease;
+    transition:
+        opacity 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.legal-box a:hover,
-.legal-back:hover {
+.legal-box a:hover {
     opacity: 0.8;
-    color: #fff;
-    transform: translateX(-4px);
 }
-
 
 .legal-back {
     display: inline-block;
     margin-top: 32px;
     font-size: 18px;
     font-weight: 500;
-    color: #F2CC86;
-    text-decoration: none;
-    transition: transform .25s ease, color .25s ease;
+}
+
+.legal-back:hover {
+    color: #fff;
+    transform: translateX(-4px);
 }
 
 .legal-footer {
     position: relative;
     left: auto;
+    right: auto;
     bottom: auto;
-    margin: 40px 0 30px calc(8vw + 40px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.72);
+    justify-content: flex-start;
+    margin: 40px 0 30px 8vw;
     opacity: 0.75;
-    
 }
 
-/* Animation */
+.legal-footer img {
+    height: 18px;
+}
+
+
+/* ----------------------------------------------------------
+   Animations
+   ---------------------------------------------------------- */
+
+@keyframes zoom {
+    from {
+        transform: scale(1.04);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
 
 @keyframes fadeIn {
     from {
@@ -342,7 +380,10 @@ body.legal .overlay {
     }
 }
 
-/* Tablet */
+
+/* ----------------------------------------------------------
+   Tablet
+   ---------------------------------------------------------- */
 
 @media (max-width: 1000px) {
     .content {
@@ -362,10 +403,14 @@ body.legal .overlay {
     }
 }
 
-/* Smartphone */
+
+/* ----------------------------------------------------------
+   Smartphone
+   ---------------------------------------------------------- */
 
 @media (max-width: 700px) {
     .content {
+        min-height: 100vh;
         padding: 90px 35px 35px;
         justify-content: flex-start;
     }
@@ -384,6 +429,7 @@ body.legal .overlay {
     }
 
     .card {
+        width: 100%;
         padding: 22px;
         border-radius: 24px;
     }
@@ -411,16 +457,20 @@ body.legal .overlay {
 
     footer {
         left: 35px;
+        right: 35px;
         bottom: 25px;
         font-size: 14px;
     }
 
+    .footer-left img,
     footer img {
         height: 18px;
     }
 
     .legal-page {
+        width: auto;
         padding: 60px 28px 30px;
+        margin-left: 0;
     }
 
     .legal-header {
@@ -450,11 +500,14 @@ body.legal .overlay {
     }
 
     .legal-footer {
-        margin: 20px 0 30px 28px;
+        margin: 30px 28px;
     }
 }
 
-/* Kleine Notebook-Höhen */
+
+/* ----------------------------------------------------------
+   Kleine Notebook-Höhen
+   ---------------------------------------------------------- */
 
 @media (max-height: 850px) and (min-width: 701px) {
     .content {
