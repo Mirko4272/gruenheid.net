@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
@@ -11,7 +11,7 @@ body {
     overflow: hidden;
     font-family: "Manrope", sans-serif;
     background: #000;
-    color: #fff
+    color: #fff;
 }
 
 .background {
@@ -22,7 +22,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     transform: scale(1.04);
-    animation: zoom 18s ease forwards
+    animation: zoom 18s ease forwards;
 }
 
 @keyframes zoom {
@@ -95,7 +95,11 @@ h1 {
     background: rgba(44, 48, 56, .34);
     backdrop-filter: blur(36px);
     -webkit-backdrop-filter: blur(36px);
-    transition: all .30s ease
+    transition:
+        transform 0.30s ease,
+        background 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease;
 }
 
 .card:hover {
@@ -141,14 +145,15 @@ h1 {
     align-items: center;
     justify-content: center;
     opacity: .48;
-    transition: .25s;
     color: rgba(255, 255, 255, .82)
 }
 
 .arrow img {
     width:18px;
     opacity:0.65;
-    transition:all .25s ease;
+    transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 
 }
 
@@ -183,12 +188,12 @@ footer span {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px)
+        transform: translateY(30px);
     }
 
     to {
         opacity: 1;
-        transform: none
+        transform: none;
     }
 }
 
