@@ -282,4 +282,14 @@ footer span {
     footer img {
         height: 18px;
     }
+
+    .card .text a {
+    color: #d6b06a;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.card .text a:hover {
+    opacity: 0.8;
+}
 }
