@@ -6,12 +6,15 @@
 
 html,
 body {
+    body {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: "Manrope", sans-serif;
     background: #000;
     color: #fff;
+}
 }
 
 .background {
@@ -292,4 +295,22 @@ footer span {
 .card .text a:hover {
     opacity: 0.8;
 }
+
+/* Impressum / Datenschutz */
+
+body.legal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.legal footer {
+    position: static;
+    margin: 50px 0 30px 8vw;
+}
+
+body.legal .content {
+    min-height: auto;
+    padding-bottom: 60px;
+}
+
 }
