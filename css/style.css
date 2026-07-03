@@ -299,18 +299,43 @@ footer span {
 /* Impressum / Datenschutz */
 
 body.legal {
+    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-body.legal footer {
-    position: static;
-    margin: 50px 0 30px 8vw;
+body.legal .content {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 40px;
 }
 
-body.legal .content {
-    min-height: auto;
-    padding-bottom: 60px;
+body.legal .card {
+    max-width: 720px;
+}
+
+body.legal footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 20px 0 30px 8vw;
+}
+
+@media (max-height: 850px) {
+    body.legal .content {
+        padding-top: 70px;
+    }
+
+    body.legal .hero {
+        margin-bottom: 35px;
+    }
+
+    body.legal h1 {
+        font-size: 64px;
+        margin-bottom: 20px;
+    }
+}
 }
 
 }
