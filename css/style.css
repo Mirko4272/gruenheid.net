@@ -1,21 +1,28 @@
+/* ==========================================================
+   gruenheid.net
+   Version 1.0 Final
+   ========================================================== */
+
+/* Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base */
+
 html,
 body {
-    body {
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
     font-family: "Manrope", sans-serif;
     background: #000;
     color: #fff;
 }
-}
+
+/* Background */
 
 .background {
     position: fixed;
@@ -38,6 +45,8 @@ body {
     }
 }
 
+/* Overlay */
+
 .overlay {
     position: fixed;
     inset: 0;
@@ -56,10 +65,12 @@ body {
         );
 }
 
+/* Startseite */
+
 .content {
     position: relative;
     z-index: 10;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -179,6 +190,8 @@ h1 {
     transform: translateX(4px);
 }
 
+/* Footer */
+
 footer {
     position: fixed;
     left: 8vw;
@@ -200,6 +213,97 @@ footer span {
     opacity: 0.92;
 }
 
+/* Legal Pages: Impressum / Datenschutz */
+
+body.legal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.legal .background,
+body.legal .overlay {
+    position: fixed;
+}
+
+.legal-page {
+    position: relative;
+    z-index: 10;
+    max-width: 760px;
+    padding: 90px 0 40px 8vw;
+    animation: fadeIn 1.2s ease;
+}
+
+.legal-header {
+    margin-bottom: 40px;
+}
+
+.legal-header h1 {
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.legal-header p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #F2CC86;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.legal-box {
+    padding: 36px 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(44, 48, 56, 0.42);
+    backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: blur(36px);
+}
+
+.legal-box h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 26px 0 10px;
+}
+
+.legal-box h2:first-child {
+    margin-top: 0;
+}
+
+.legal-box p {
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.legal-box a,
+.legal-back {
+    color: #d6b06a;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+}
+
+.legal-box a:hover,
+.legal-back:hover {
+    opacity: 0.8;
+}
+
+.legal-back {
+    display: inline-block;
+    margin-top: 28px;
+    font-size: 18px;
+}
+
+.legal-footer {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 20px 0 30px 8vw;
+}
+
+/* Animation */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -211,6 +315,8 @@ footer span {
         transform: none;
     }
 }
+
+/* Tablet */
 
 @media (max-width: 1000px) {
     .content {
@@ -230,11 +336,12 @@ footer span {
     }
 }
 
+/* Smartphone */
+
 @media (max-width: 700px) {
     .content {
-        padding: 35px;
+        padding: 90px 35px 35px;
         justify-content: flex-start;
-        padding-top: 90px;
     }
 
     .hero {
@@ -286,100 +393,17 @@ footer span {
         height: 18px;
     }
 
-    .card .text a {
-    color: #d6b06a;
-    text-decoration: none;
-    transition: opacity 0.25s ease;
-}
-
-.card .text a:hover {
-    opacity: 0.8;
-}
-
-/* Impressum / Datenschutz */
-
-body.legal {
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.legal-page {
-    position: relative;
-    z-index: 10;
-    max-width: 760px;
-    padding: 90px 0 40px 8vw;
-}
-
-.legal-header {
-    margin-bottom: 40px;
-}
-
-.legal-header h1 {
-    font-size: 72px;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-}
-
-.legal-header p {
-    font-size: 24px;
-    font-weight: 400;
-    color: #F2CC86;
-    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
-}
-
-.legal-box {
-    padding: 36px 40px;
-    border-radius: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(44, 48, 56, 0.42);
-    backdrop-filter: blur(36px);
-    -webkit-backdrop-filter: blur(36px);
-}
-
-.legal-box h2 {
-    font-size: 22px;
-    margin: 26px 0 10px;
-}
-
-.legal-box h2:first-child {
-    margin-top: 0;
-}
-
-.legal-box p {
-    font-size: 16px;
-    line-height: 1.45;
-}
-
-.legal-box a,
-.legal-back {
-    color: #d6b06a;
-    text-decoration: none;
-}
-
-.legal-back {
-    display: inline-block;
-    margin-top: 28px;
-    font-size: 18px;
-}
-
-.legal-footer {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin: 20px 0 30px 8vw;
-}
-
-@media (max-width: 700px) {
     .legal-page {
         padding: 60px 28px 30px;
     }
 
+    .legal-header {
+        margin-bottom: 32px;
+    }
+
     .legal-header h1 {
         font-size: 48px;
+        margin-bottom: 20px;
     }
 
     .legal-header p {
@@ -391,8 +415,52 @@ body.legal {
         border-radius: 24px;
     }
 
+    .legal-box h2 {
+        font-size: 20px;
+    }
+
+    .legal-box p {
+        font-size: 15px;
+    }
+
     .legal-footer {
-        margin-left: 28px;
+        margin: 20px 0 30px 28px;
     }
 }
 
+/* Kleine Notebook-Höhen */
+
+@media (max-height: 850px) and (min-width: 701px) {
+    .content {
+        padding-top: 150px;
+    }
+
+    .hero {
+        margin-bottom: 45px;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    .legal-page {
+        padding-top: 60px;
+    }
+
+    .legal-header {
+        margin-bottom: 30px;
+    }
+
+    .legal-header h1 {
+        font-size: 58px;
+        margin-bottom: 18px;
+    }
+
+    .legal-box {
+        padding: 30px 36px;
+    }
+
+    .legal-box h2 {
+        margin: 20px 0 8px;
+    }
+}
