@@ -255,6 +255,11 @@ body {
     filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.7));
 }
 
+.tech-item img[src*="cloudflare"] {
+    width: 22px;
+    height: 22px;
+}
+
 .tech-amp {
     margin: 0 2px;
     opacity: 0.88;
@@ -505,7 +510,7 @@ body.legal {
             "tech"
             "link";
         justify-items: center;
-        gap: 13px;
+        gap: 10px;
         font-size: clamp(13px, 3.65vw, 15px);
         line-height: 1.35;
         color: rgba(255, 255, 255, 0.92);
@@ -516,6 +521,7 @@ body.legal {
         grid-area: copy;
         justify-self: center;
         white-space: normal;
+        margin-bottom: -2px;
     }
 
     .tech-signature {
@@ -533,6 +539,11 @@ body.legal {
     .tech-item img {
         width: 18px;
         height: 18px;
+    }
+
+    .tech-item img[src*="cloudflare"] {
+        width: 23px;
+        height: 23px;
     }
 
     .tech-amp {
@@ -609,6 +620,11 @@ body.legal {
     .tech-item img {
         width: 17px;
         height: 17px;
+    }
+
+    .tech-item img[src*="cloudflare"] {
+        width: 22px;
+        height: 22px;
     }
 }
 
