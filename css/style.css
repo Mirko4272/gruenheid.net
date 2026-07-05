@@ -291,17 +291,7 @@ body {
 }
 
 .photo-location {
-
-    margin-top: 6px;
-
-    font-size: 0.68rem;
-
-    letter-spacing: 0.12em;
-
-    color: rgba(255,255,255,.35);
-
-    font-variant-numeric: tabular-nums;
-
+    color: rgba(223, 185, 118, 0.60);
 }
 
 /* ----------------------------------------------------------
