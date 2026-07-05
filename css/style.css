@@ -290,6 +290,16 @@ body {
     animation: none;
 }
 
+.photo-location {
+    margin-top: 8px;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,.32);
+    text-align:center;
+    font-variant-numeric: tabular-nums;
+    user-select:none;
+}
+
 /* ----------------------------------------------------------
    Legal Pages: Impressum / Datenschutz
    ---------------------------------------------------------- */
