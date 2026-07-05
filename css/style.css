@@ -655,17 +655,17 @@ body.legal {
     }
 
     .footer-links {
-    grid-area: link;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 4px;
-    white-space: nowrap;
+        grid-area: link;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 4px;
+        white-space: nowrap;
     }
 
     .footer-link {
-    color: rgba(255,255,255,.88);
+        color: rgba(255,255,255,.88);
     }
 
 
