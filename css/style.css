@@ -280,12 +280,6 @@ body {
     opacity: 1;
 }
 
-.cloudflare-logo {
-    height: 22px;
-    width: auto;
-    vertical-align: middle;
-}
-
 .legal-site-footer {
     position: relative;
     left: auto;
@@ -832,4 +826,9 @@ body.legal {
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
     }
+}
+
+.tech-signature .tech-item img.cloudflare-logo {
+    width: 25px;
+    height: 25px;
 }
