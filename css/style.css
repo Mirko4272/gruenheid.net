@@ -649,11 +649,6 @@ body.legal {
         height: 18px;
     }
 
-    .tech-item img[src*="cloudflare"] {
-        width: 23px;
-        height: 23px;
-    }
-
     .tech-amp {
         margin: 0 1px;
     }
