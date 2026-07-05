@@ -291,17 +291,18 @@ body {
 }
 
 .photo-location {
-    margin-top: 14px;
+    display: inline-block;
+    margin-top: 12px;
     font-size: 0.72rem;
-    color: rgba(223, 185, 118, 0.60);
+    font-weight: 400;
     letter-spacing: 0.08em;
+    color: rgba(223, 185, 118, 0.72);
     text-decoration: none;
-    cursor: pointer;
+    font-variant-numeric: tabular-nums;
 }
 
-
 .photo-location:hover {
-    color: rgba(223, 185, 118, 0.85);
+    color: rgba(223, 185, 118, 0.95);
 }
 
 /* ----------------------------------------------------------
