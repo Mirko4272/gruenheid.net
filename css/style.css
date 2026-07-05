@@ -380,6 +380,99 @@ body.legal {
     transform: translateX(-4px);
 }
 
+
+/* ----------------------------------------------------------
+   Kontaktformular
+   ---------------------------------------------------------- */
+
+.contact-page {
+    width: min(680px, calc(100% - 16vw));
+}
+
+.contact-box {
+    padding: 38px 40px 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form label {
+    margin-top: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 18px;
+    outline: none;
+    font: inherit;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 170px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgba(255, 194, 118, 0.72);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 4px rgba(255, 194, 118, 0.10);
+}
+
+.form-button {
+    margin-top: 18px;
+    min-height: 64px;
+    padding: 0 26px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    color: #fff;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    background: rgba(24, 27, 30, 0.58);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    cursor: pointer;
+    transition:
+        transform 0.30s ease,
+        background 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease;
+}
+
+.form-button:hover {
+    transform: translateY(-3px);
+    background: rgba(42, 45, 52, 0.62);
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30);
+}
+
+.thanks-box {
+    max-width: 620px;
+}
+
+.thanks-message {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.90);
+}
+
 /* ----------------------------------------------------------
    Animations
    ---------------------------------------------------------- */
@@ -561,7 +654,8 @@ body.legal {
         grid-template-columns: 1fr;
         grid-template-areas:
             "copy"
-            "tech";
+            "tech"
+            "link";
         justify-items: center;
     }
 
@@ -587,6 +681,30 @@ body.legal {
     .legal-box {
         padding: 28px 24px;
         border-radius: 24px;
+    }
+
+    .contact-page {
+        width: auto;
+    }
+
+    .contact-box {
+        padding: 28px 24px 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 15px 16px;
+        border-radius: 16px;
+    }
+
+    .form-button {
+        min-height: 60px;
+        border-radius: 18px;
+        font-size: 17px;
+    }
+
+    .thanks-message {
+        font-size: 18px;
     }
 
     .legal-box h2 {
