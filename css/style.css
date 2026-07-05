@@ -91,7 +91,7 @@ body {
 }
 
 .motto span {
-    color: #F2B96F;
+    color: #FFC276;
 }
 
 .cards {
@@ -188,12 +188,12 @@ body {
 }
 
 .signature-name {
-    margin-bottom: 14px;
+    margin-bottom: 7px;
     font-family: "Caveat", cursive;
-    font-size: clamp(38px, 3vw, 50px);
+    font-size: clamp(36px, 2.7vw, 46px);
     font-weight: 400;
     line-height: 0.95;
-    color: #F2B96F;
+    color: #FFC276;
     text-shadow: 0 4px 22px rgba(0, 0, 0, 0.48);
 }
 
@@ -219,8 +219,7 @@ body {
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 24px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 0;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.86);
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.78);
@@ -431,8 +430,8 @@ body.legal {
     }
 
     .content {
-        min-height: 100vh;
-        padding: 92px 32px 300px;
+        min-height: auto;
+        padding: 92px 32px 0;
         justify-content: flex-start;
     }
 
@@ -482,55 +481,58 @@ body.legal {
     }
 
     .signature-name {
-        font-size: 42px;
-        margin-bottom: 12px;
+        font-size: 38px;
+        margin-bottom: 5px;
+        color: #FFC276;
     }
 
     .signature-text {
-        max-width: 320px;
-        font-size: 18px;
-        line-height: 1.55;
+        max-width: none;
+        font-size: 16px;
+        line-height: 1.35;
     }
 
     .site-footer {
-        left: 32px;
-        right: 32px;
-        bottom: 34px;
-        padding-top: 24px;
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 58px 32px 34px;
+        padding-top: 0;
         grid-template-columns: 1fr;
         grid-template-areas:
             "copy"
             "tech"
             "link";
-        justify-items: start;
-        gap: 15px;
-        font-size: 17px;
+        justify-items: center;
+        gap: 13px;
+        font-size: clamp(13px, 3.65vw, 15px);
         line-height: 1.35;
-        color: rgba(255, 255, 255, 0.90);
+        color: rgba(255, 255, 255, 0.92);
         text-shadow: 0 1px 12px rgba(0, 0, 0, 0.90);
     }
 
     .footer-copy {
         grid-area: copy;
-        justify-self: start;
+        justify-self: center;
         white-space: normal;
     }
 
     .tech-signature {
         grid-area: tech;
-        justify-self: start;
-        gap: 13px;
+        justify-self: center;
+        gap: 8px;
         max-width: 100%;
         white-space: nowrap;
     }
 
     .tech-item {
-        gap: 8px;
+        gap: 6px;
     }
 
     .tech-item img {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
     }
 
     .tech-amp {
@@ -540,7 +542,7 @@ body.legal {
     .footer-link {
         grid-area: link;
         justify-self: center;
-        margin-top: 10px;
+        margin-top: 4px;
         color: rgba(255, 255, 255, 0.88);
     }
 
@@ -549,7 +551,7 @@ body.legal {
         grid-template-areas:
             "copy"
             "tech";
-        justify-items: start;
+        justify-items: center;
     }
 
     .legal-page {
@@ -596,18 +598,17 @@ body.legal {
     }
 
     .site-footer {
-        left: 26px;
-        right: 26px;
-        font-size: 15px;
+        margin-left: 26px;
+        margin-right: 26px;
     }
 
     .tech-signature {
-        gap: 10px;
+        gap: 7px;
     }
 
     .tech-item img {
-        width: 20px;
-        height: 20px;
+        width: 17px;
+        height: 17px;
     }
 }
 
@@ -643,7 +644,7 @@ body.legal {
 
     .site-footer {
         bottom: 28px;
-        padding-top: 22px;
+        padding-top: 0;
     }
 
     .legal-page {
