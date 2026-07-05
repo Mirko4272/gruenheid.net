@@ -312,6 +312,16 @@ body {
     animation: none;
 }
 
+.thanks-footer {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 60px 8vw 30px;
+    opacity: 1;
+    animation: none;
+}
+
 .photo-location {
     display: inline-block;
     margin-top: 12px;
@@ -553,25 +563,30 @@ body.legal {
    ---------------------------------------------------------- */
 
 @media (max-width: 700px) {
+
+    .thanks-footer {
+        margin: 70px 32px 34px;
+    }
+
     .background {
         background-position: center center;
     }
 
    .overlay {
-    background:
-        radial-gradient(circle at 80% 18%, rgba(255,188,108,.12), transparent 34%),
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.60) 0%,
-            rgba(0,0,0,.22) 30%,
-            rgba(0,0,0,.05) 56%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(2,4,7,.48) 0%,
-            rgba(2,4,7,.20) 55%,
-            rgba(2,4,7,.08) 100%
-        );
+        background:
+            radial-gradient(circle at 80% 18%, rgba(255,188,108,.12), transparent 34%),
+            linear-gradient(
+                0deg,
+                rgba(0,0,0,.60) 0%,
+                rgba(0,0,0,.22) 30%,
+                rgba(0,0,0,.05) 56%
+            ),
+            linear-gradient(
+                90deg,
+                rgba(2,4,7,.48) 0%,
+                rgba(2,4,7,.20) 55%,
+                rgba(2,4,7,.08) 100%
+            );
     }
 
     .content {
@@ -692,16 +707,6 @@ body.legal {
 
     .footer-link {
         color: rgba(255,255,255,.88);
-    }
-
-    .thanks-footer {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin: 60px 8vw 30px;
-    opacity: 1;
-    animation: none;
     }
 
     .legal-site-footer {
