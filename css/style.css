@@ -291,7 +291,10 @@ body {
 }
 
 .photo-location {
+    margin-top: 14px;
+    font-size: 0.72rem;
     color: rgba(223, 185, 118, 0.60);
+    letter-spacing: 0.08em;
 }
 
 /* ----------------------------------------------------------
