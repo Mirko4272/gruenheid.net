@@ -280,6 +280,12 @@ body {
     opacity: 1;
 }
 
+.cloudflare-logo {
+    height: 18px;
+    width: auto;
+    vertical-align: middle;
+}
+
 .legal-site-footer {
     position: relative;
     left: auto;
