@@ -553,26 +553,19 @@ body.legal {
    ---------------------------------------------------------- */
 
 @media (max-width: 700px) {
-    .background {
-        background-position: center center;
+    .overlay {
+        background:
+            radial-gradient(circle at 80% 18%, rgba(255,188,108,.16), transparent 34%),
+            linear-gradient(0deg,
+                rgba(0,0,0,.78) 0%,
+                rgba(0,0,0,.30) 30%,
+                rgba(0,0,0,.10) 56%),
+            linear-gradient(90deg,
+                rgba(2,4,7,.62) 0%,
+                rgba(2,4,7,.26) 55%,
+                rgba(2,4,7,.12) 100%);
     }
-
-   .overlay {
-    background:
-        radial-gradient(circle at 80% 18%, rgba(255,188,108,.12), transparent 34%),
-        linear-gradient(
-            0deg,
-            rgba(0,0,0,.60) 0%,
-            rgba(0,0,0,.22) 30%,
-            rgba(0,0,0,.05) 56%
-        ),
-        linear-gradient(
-            90deg,
-            rgba(2,4,7,.48) 0%,
-            rgba(2,4,7,.20) 55%,
-            rgba(2,4,7,.08) 100%
-        );
-    }
+}
 
     .content {
         min-height: auto;
