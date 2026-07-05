@@ -644,11 +644,6 @@ body.legal {
         gap: 6px;
     }
 
-    .tech-item img {
-        width: 18px;
-        height: 18px;
-    }
-
     .tech-amp {
         margin: 0 1px;
     }
@@ -750,10 +745,6 @@ body.legal {
         height: 17px;
     }
 
-    .tech-item img[src*="cloudflare"] {
-        width: 22px;
-        height: 22px;
-    }
 }
 
 /* ----------------------------------------------------------
