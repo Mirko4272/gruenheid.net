@@ -810,8 +810,8 @@ body.legal {
 }
 
 .tech-signature .tech-item img.cloudflare-logo {
-    width: 35px;
-    height: 35px;
+    width: 18px;
+    height: 18px;
 }
 
 @media (max-width: 700px) {
@@ -821,7 +821,7 @@ body.legal {
     }
 
     .tech-signature .tech-item img.cloudflare-logo {
-        width: 25px;
-        height: 25px;
+        width: 18px;
+        height: 18px;
     }
 }
