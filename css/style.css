@@ -569,11 +569,7 @@ body.legal {
 
 @media (max-width: 700px) {
 
-    .background {
-        background-position: center center;
-    }
-
-   .overlay {
+    .overlay {
         background:
             radial-gradient(circle at 80% 18%, rgba(255,188,108,.12), transparent 34%),
             linear-gradient(
