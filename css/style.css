@@ -260,16 +260,6 @@ body {
     opacity: 0.88;
 }
 
-.footer-link {
-    justify-self: end;
-    color: rgba(255, 255, 255, 0.86);
-    text-decoration: none;
-    transition:
-        color 0.25s ease,
-        opacity 0.25s ease;
-    white-space: nowrap;
-}
-
 .footer-links {
     justify-self: end;
     display: flex;
@@ -288,10 +278,7 @@ body {
     transition:
         color .25s ease,
         opacity .25s ease;
-}
-
-.footer-link:hover {
-    color: #F2CC86;
+    white-space: nowrap;
 }
 
 .footer-link:hover {
@@ -675,11 +662,12 @@ body.legal {
     gap: 10px;
     margin-top: 4px;
     white-space: nowrap;
-}
+    }
 
-.footer-link {
+    .footer-link {
     color: rgba(255,255,255,.88);
-}
+    }
+
 
     .legal-site-footer {
         grid-template-columns: 1fr;
