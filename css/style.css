@@ -270,6 +270,30 @@ body {
     white-space: nowrap;
 }
 
+.footer-links {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.footer-separator {
+    color: rgba(255,255,255,.65);
+}
+
+.footer-link {
+    color: rgba(255,255,255,.86);
+    text-decoration: none;
+    transition:
+        color .25s ease,
+        opacity .25s ease;
+}
+
+.footer-link:hover {
+    color: #F2CC86;
+}
+
 .footer-link:hover {
     color: #F2CC86;
     opacity: 1;
@@ -643,12 +667,19 @@ body.legal {
         margin: 0 1px;
     }
 
-    .footer-link {
-        grid-area: link;
-        justify-self: center;
-        margin-top: 4px;
-        color: rgba(255, 255, 255, 0.88);
-    }
+    .footer-links {
+    grid-area: link;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+.footer-link {
+    color: rgba(255,255,255,.88);
+}
 
     .legal-site-footer {
         grid-template-columns: 1fr;
