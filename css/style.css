@@ -673,7 +673,7 @@ body.legal {
         margin-top: auto;
         margin-left: 32px;
         margin-right: 32px;
-        margin-bottom: calc(18px + env(safe-area-inset-bottom));
+        margin-bottom: calc(24px + env(safe-area-inset-bottom));
     }
 
     .footer-copy {
