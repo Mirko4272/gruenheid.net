@@ -38,10 +38,13 @@
     </section>
 
     <section class="legal-box contact-box">
-        <form class="contact-form" action="https://formspree.io/f/xbdvzqzl" method="POST">
-            <input type="hidden" name="_subject" value="Neue Nachricht über gruenheid.net">
-            <input type="hidden" name="_next" value="https://www.gruenheid.net/danke.html">
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
+    <input type="hidden" name="access_key" value="5dde5ab2-a554-4f61-b8b4-113d5f2ef4f3">
+    <input type="hidden" name="subject" value="Neue Nachricht von gruenheid.net">
+    <input type="checkbox" name="botcheck" hidden tabindex="-1" autocomplete="off">
+    <input type="hidden" name="redirect" value="https://www.gruenheid.net/danke.html">
+            
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required>
 
