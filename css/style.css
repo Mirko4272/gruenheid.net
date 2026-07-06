@@ -570,11 +570,10 @@ body.legal {
 @media (min-width: 701px) and (max-width: 850px) {
 
     .content {
-        min-height: auto;
+        min-height: 100vh;
         padding-top: 95px;
-        padding-bottom: 12px;
+        padding-bottom: 150px;
     }
-
     .hero {
         margin-bottom: 24px;
     }
@@ -607,39 +606,40 @@ body.legal {
     }
 
     .site-footer {
-        position: relative;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        position: fixed;
+        left: 32px;
+        right: 32px;
+        bottom: 24px;
 
-        margin: 12px 32px 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "copy"
+            "tech"
+            "link";
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
+        justify-items: center;
         gap: 8px;
 
+        margin: 0;
         text-align: center;
     }
 
-    .footer-copy,
-    .tech-signature,
-    .footer-links {
-        justify-self: auto;
-        width: auto;
-        text-align: center;
+    .footer-copy {
+        grid-area: copy;
+        justify-self: center;
+    }
+
+    .tech-signature {
+        grid-area: tech;
+        justify-self: center;
     }
 
     .footer-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+        grid-area: link;
+        justify-self: center;
     }
 }
-
 /* ----------------------------------------------------------
    Smartphone
    ---------------------------------------------------------- */
