@@ -563,6 +563,41 @@ body.legal {
     }
 }
 
+@media (max-width: 850px) and (min-width: 701px) {
+
+    .site-footer {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 58px 32px 34px;
+        padding-top: 0;
+
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "copy"
+            "tech"
+            "link";
+
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .footer-copy {
+        grid-area: copy;
+        justify-self: center;
+    }
+
+    .tech-signature {
+        grid-area: tech;
+        justify-self: center;
+    }
+
+    .footer-links {
+        grid-area: link;
+        justify-self: center;
+    }
+}
 /* ----------------------------------------------------------
    Smartphone
    ---------------------------------------------------------- */
