@@ -570,7 +570,7 @@ body.legal {
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 58px 32px 34px;
+        margin: 28px 32px 24px;
         padding-top: 0;
 
         grid-template-columns: 1fr;
@@ -580,7 +580,7 @@ body.legal {
             "link";
 
         justify-items: center;
-        gap: 10px;
+        gap: 7px;
     }
 
     .footer-copy {
@@ -839,7 +839,7 @@ body.legal {
    Kleine Notebook-Höhen
    ---------------------------------------------------------- */
 
-@media (max-height: 850px) and (min-width: 701px) {
+@media (max-height: 850px) and (min-width: 851px) {
     .content {
         padding-top: 120px;
         padding-bottom: 170px;
