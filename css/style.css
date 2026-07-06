@@ -563,12 +563,16 @@ body.legal {
     }
 }
 
-@media (max-width: 850px) and (min-width: 701px) {
+/* ----------------------------------------------------------
+   iPad / kleine Tablets
+   ---------------------------------------------------------- */
 
-   .content {
+@media (min-width: 701px) and (max-width: 850px) {
+
+    .content {
         min-height: auto;
         padding-top: 95px;
-        padding-bottom: 10px;
+        padding-bottom: 12px;
     }
 
     .hero {
@@ -579,14 +583,27 @@ body.legal {
         margin-bottom: 28px;
     }
 
+    .motto {
+        font-size: 58px;
+    }
+
     .cards {
         gap: 20px;
         margin-bottom: 28px;
     }
 
     .card {
+        width: 100%;
         min-height: 88px;
         padding: 20px 26px;
+    }
+
+    .signature-name {
+        font-size: 40px;
+    }
+
+    .signature-text {
+        font-size: 17px;
     }
 
     .site-footer {
@@ -594,19 +611,35 @@ body.legal {
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 0 32px 22px;
-        padding-top: 0;
 
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "copy"
-            "tech"
-            "link";
+        margin: 12px 32px 20px;
 
-        justify-items: center;
-        gap: 7px;
-    }   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+    .footer-copy,
+    .tech-signature,
+    .footer-links {
+        justify-self: auto;
+        width: auto;
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
 }
+
 /* ----------------------------------------------------------
    Smartphone
    ---------------------------------------------------------- */
