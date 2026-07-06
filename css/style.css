@@ -565,10 +565,10 @@ body.legal {
 
 @media (max-width: 850px) and (min-width: 701px) {
 
-    .content {
+   .content {
         min-height: auto;
         padding-top: 95px;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
     }
 
     .hero {
@@ -594,7 +594,7 @@ body.legal {
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 24px 32px 22px;
+        margin: 0 32px 22px;
         padding-top: 0;
 
         grid-template-columns: 1fr;
@@ -605,7 +605,7 @@ body.legal {
 
         justify-items: center;
         gap: 7px;
-    }
+    }   
 }
 /* ----------------------------------------------------------
    Smartphone
