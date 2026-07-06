@@ -565,12 +565,36 @@ body.legal {
 
 @media (max-width: 850px) and (min-width: 701px) {
 
+    .content {
+        min-height: auto;
+        padding-top: 95px;
+        padding-bottom: 40px;
+    }
+
+    .hero {
+        margin-bottom: 24px;
+    }
+
+    .brand {
+        margin-bottom: 28px;
+    }
+
+    .cards {
+        gap: 20px;
+        margin-bottom: 28px;
+    }
+
+    .card {
+        min-height: 88px;
+        padding: 20px 26px;
+    }
+
     .site-footer {
         position: relative;
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 28px 32px 24px;
+        margin: 24px 32px 22px;
         padding-top: 0;
 
         grid-template-columns: 1fr;
@@ -581,21 +605,6 @@ body.legal {
 
         justify-items: center;
         gap: 7px;
-    }
-
-    .footer-copy {
-        grid-area: copy;
-        justify-self: center;
-    }
-
-    .tech-signature {
-        grid-area: tech;
-        justify-self: center;
-    }
-
-    .footer-links {
-        grid-area: link;
-        justify-self: center;
     }
 }
 /* ----------------------------------------------------------
