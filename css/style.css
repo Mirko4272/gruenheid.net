@@ -31,7 +31,7 @@ body {
     inset: 0;
     z-index: 0;
     background-image: url("../assets/hero-background2.webp");
-    background-position: center center;
+    background-position: center 58%;
     background-size: cover;
     background-repeat: no-repeat;
     transform: scale(1.04);
