@@ -98,10 +98,10 @@ body {
 }
 
 .motto {
-    font-size: clamp(54px, 5vw, 82px);
     font-weight: 300;
-    line-height: 1.08;
-    letter-spacing: -2.2px;
+    font-size: clamp(48px, 4.2vw, 70px);
+    line-height: 1.10;
+    letter-spacing: -1.7px;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.42);
     opacity: 0;
     animation: fadeUp 0.85s ease 0.18s forwards;
