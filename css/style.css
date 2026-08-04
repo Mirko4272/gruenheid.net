@@ -1,20 +1,20 @@
 /* ==========================================================
-   gruenheid.net
-   style.css — komplett überarbeitet
+   gruenheid.net — style.css
+   Neuaufbau August 2026
    ========================================================== */
 
 :root {
-    --text: #f7f5f0;
-    --text-soft: rgba(247, 245, 240, 0.78);
-    --text-muted: rgba(247, 245, 240, 0.58);
-    --accent: #e4b56a;
-    --glass: rgba(30, 31, 32, 0.48);
-    --glass-hover: rgba(42, 43, 45, 0.58);
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --page-x: clamp(28px, 7.5vw, 120px);
-    --content-width: 720px;
-    --radius-lg: 24px;
-    --shadow-text: 0 3px 20px rgba(0, 0, 0, 0.52);
+    --text: #f7f6f3;
+    --text-soft: rgba(247, 246, 243, .82);
+    --text-muted: rgba(247, 246, 243, .58);
+    --accent: #d8ad70;
+    --panel: rgba(30, 32, 35, .46);
+    --panel-hover: rgba(42, 44, 48, .58);
+    --border: rgba(255, 255, 255, .17);
+    --border-hover: rgba(255, 255, 255, .28);
+    --left: clamp(28px, 8vw, 132px);
+    --right: clamp(28px, 8vw, 132px);
+    --text-shadow: 0 3px 18px rgba(0, 0, 0, .55);
 }
 
 * {
@@ -31,7 +31,6 @@ body {
 
 html {
     background: #000;
-    color-scheme: dark;
 }
 
 body {
@@ -41,20 +40,15 @@ body {
     background: #000;
 }
 
-/* ----------------------------------------------------------
-   Hintergrund
-   ---------------------------------------------------------- */
-
+/* Hintergrund */
 .background {
     position: fixed;
     inset: 0;
     z-index: 0;
-    background-image: url("../assets/hero-background2.webp");
-    background-position: center 58%;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url("../assets/hero-background2.webp") center 58% / cover no-repeat;
+    filter: brightness(1.035) saturate(1.025) sepia(.025);
     transform: scale(1.035);
-    animation: zoom 18s ease forwards;
+    animation: backgroundZoom 18s ease-out forwards;
 }
 
 .overlay {
@@ -63,115 +57,109 @@ body {
     z-index: 1;
     pointer-events: none;
     background:
-        radial-gradient(circle at 70% 10%, rgba(255, 210, 145, 0.08), transparent 38%),
-        linear-gradient(90deg, rgba(13, 15, 18, 0.42) 0%, rgba(13, 15, 18, 0.20) 34%, rgba(13, 15, 18, 0.04) 70%, rgba(13, 15, 18, 0) 100%),
-        linear-gradient(0deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.16) 26%, rgba(0, 0, 0, 0) 58%);
+        radial-gradient(circle at 70% 12%, rgba(255, 214, 160, .10), transparent 40%),
+        linear-gradient(90deg, rgba(14, 16, 19, .34) 0%, rgba(14, 16, 19, .15) 38%, rgba(14, 16, 19, .025) 74%, transparent 100%),
+        linear-gradient(0deg, rgba(0, 0, 0, .36) 0%, rgba(0, 0, 0, .11) 30%, transparent 60%);
 }
 
-/* ----------------------------------------------------------
-   Startseite
-   ---------------------------------------------------------- */
-
+/* Startseite */
 .content {
     position: relative;
     z-index: 10;
-    width: min(var(--content-width), calc(100% - (2 * var(--page-x))));
+    width: min(760px, calc(100% - var(--left) - var(--right)));
     min-height: 100vh;
-    margin-left: var(--page-x);
-    padding-top: clamp(96px, 13vh, 150px);
-    padding-bottom: 180px;
+    margin-left: var(--left);
+    padding-top: clamp(104px, 14vh, 168px);
+    padding-bottom: 190px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .hero {
-    margin-bottom: 32px;
+    margin-bottom: 34px;
 }
 
 .brand {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     font-size: clamp(18px, 1.35vw, 23px);
     font-weight: 300;
-    letter-spacing: -0.01em;
-    color: var(--text-soft);
-    text-shadow: var(--shadow-text);
+    line-height: 1;
+    color: rgba(247, 246, 243, .76);
+    text-shadow: var(--text-shadow);
     opacity: 0;
-    animation: fadeUp 0.75s ease 0.05s forwards;
+    animation: fadeUp .75s ease .04s forwards;
 }
 
 .motto {
-    max-width: 700px;
-    font-size: clamp(48px, 4.25vw, 68px);
+    max-width: 720px;
+    font-size: clamp(45px, 3.95vw, 63px);
     font-weight: 300;
-    line-height: 1.10;
-    letter-spacing: -0.045em;
+    line-height: 1.16;
+    letter-spacing: -1.55px;
     color: var(--text);
-    text-wrap: balance;
-    text-shadow: var(--shadow-text);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .48);
     opacity: 0;
-    animation: fadeUp 0.82s ease 0.16s forwards;
+    animation: fadeUp .82s ease .16s forwards;
 }
 
 .motto-highlight {
     display: inline-block;
-    margin: 0 0.03em;
     font-family: "Caveat", cursive;
-    font-size: 1.10em;
+    font-size: 1.05em;
     font-weight: 500;
-    line-height: 0.9;
+    line-height: .85;
     letter-spacing: 0;
     color: var(--accent);
-    transform: translateY(0.03em);
+    transform: translateY(2px);
 }
 
 .cards {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 38px;
+    margin-bottom: 42px;
     opacity: 0;
-    animation: fadeUp 0.82s ease 0.30s forwards;
+    animation: fadeUp .82s ease .30s forwards;
 }
 
 .card {
-    width: 490px;
-    max-width: 100%;
+    width: min(480px, calc(100vw - var(--left) - var(--right)));
     min-height: 88px;
     padding: 18px 24px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
     color: var(--text);
     text-decoration: none;
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    background: var(--glass);
-    backdrop-filter: blur(24px) saturate(115%);
-    -webkit-backdrop-filter: blur(24px) saturate(115%);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--panel);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .22);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     cursor: pointer;
-    transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    transition: transform .28s ease, background .28s ease, border-color .28s ease, box-shadow .28s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    background: var(--glass-hover);
-    border-color: rgba(255, 255, 255, 0.28);
-    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    background: var(--panel-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 24px 58px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .06);
 }
 
 .icon {
     width: 44px;
     height: 44px;
-    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
 }
 
 .icon img {
-    width: 37px;
+    width: 36px;
     display: block;
 }
 
@@ -191,14 +179,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.70;
+    opacity: .68;
 }
 
 .arrow img {
     width: 14px;
     display: block;
-    opacity: 0.88;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity .22s ease, transform .22s ease;
 }
 
 .card:hover .arrow img {
@@ -207,9 +194,9 @@ body {
 }
 
 .personal-note {
-    max-width: 610px;
+    max-width: 620px;
     opacity: 0;
-    animation: fadeUp 0.82s ease 0.44s forwards;
+    animation: fadeUp .82s ease .44s forwards;
 }
 
 .signature-name {
@@ -217,57 +204,56 @@ body {
     font-family: "Caveat", cursive;
     font-size: clamp(34px, 2.45vw, 42px);
     font-weight: 500;
-    line-height: 0.95;
+    line-height: .95;
     color: var(--accent);
-    text-shadow: var(--shadow-text);
+    text-shadow: var(--text-shadow);
 }
 
 .signature-text {
-    max-width: 560px;
-    font-size: clamp(16px, 1.25vw, 18px);
+    max-width: 580px;
+    font-size: 17px;
     font-weight: 300;
-    line-height: 1.48;
-    color: var(--text-soft);
-    text-shadow: var(--shadow-text);
+    line-height: 1.46;
+    color: rgba(247, 246, 243, .88);
+    text-shadow: var(--text-shadow);
 }
 
 .photo-location {
     display: inline-block;
-    margin-top: 12px;
-    font-size: 0.70rem;
+    margin-top: 11px;
+    font-size: .70rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
-    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+    letter-spacing: .08em;
     color: var(--text-muted);
     text-decoration: none;
+    font-variant-numeric: tabular-nums;
     white-space: nowrap;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    transition: color .22s ease;
 }
 
 .photo-location:hover {
     color: var(--accent);
 }
 
-/* ----------------------------------------------------------
-   Footer
-   ---------------------------------------------------------- */
-
+/* Footer */
 .site-footer {
     position: fixed;
-    left: var(--page-x);
-    right: var(--page-x);
-    bottom: 34px;
     z-index: 20;
+    left: var(--left);
+    right: var(--right);
+    bottom: 30px;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 20px;
     font-size: 13px;
     font-weight: 300;
-    color: var(--text-soft);
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.72);
+    line-height: 1.3;
+    color: rgba(247, 246, 243, .76);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, .78);
     opacity: 0;
-    animation: fadeUp 0.85s ease 0.58s forwards;
+    animation: fadeUp .86s ease .58s forwards;
 }
 
 .footer-copy {
@@ -279,7 +265,7 @@ body {
     justify-self: center;
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+    gap: 10px;
     white-space: nowrap;
 }
 
@@ -293,7 +279,7 @@ body {
     width: 16px;
     height: 16px;
     display: block;
-    filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.68));
+    filter: drop-shadow(0 1px 5px rgba(0, 0, 0, .65));
 }
 
 .tech-signature .tech-item img.cloudflare-logo {
@@ -303,7 +289,7 @@ body {
 }
 
 .tech-amp {
-    opacity: 0.74;
+    opacity: .68;
 }
 
 .footer-links {
@@ -315,24 +301,20 @@ body {
 }
 
 .footer-separator {
-    color: var(--text-muted);
+    color: rgba(247, 246, 243, .42);
 }
 
 .footer-link {
-    color: var(--text-soft);
+    color: rgba(247, 246, 243, .76);
     text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.25s ease, opacity 0.25s ease;
+    transition: color .22s ease;
 }
 
 .footer-link:hover {
     color: var(--accent);
 }
 
-/* ----------------------------------------------------------
-   Rechtliche Seiten
-   ---------------------------------------------------------- */
-
+/* Rechtliche Seiten */
 body.legal {
     min-height: 100vh;
     display: flex;
@@ -342,10 +324,10 @@ body.legal {
 .legal-page {
     position: relative;
     z-index: 10;
-    width: min(760px, calc(100% - (2 * var(--page-x))));
-    margin-left: var(--page-x);
-    padding: 74px 0 42px;
-    animation: fadeUp 0.8s ease;
+    width: min(760px, calc(100% - var(--left) - var(--right)));
+    margin-left: var(--left);
+    padding: 78px 0 44px;
+    animation: fadeUp .8s ease;
 }
 
 .legal-header {
@@ -353,26 +335,27 @@ body.legal {
 }
 
 .legal-header h1 {
-    margin-bottom: 18px;
-    font-size: clamp(46px, 5vw, 68px);
+    margin-bottom: 20px;
+    font-size: clamp(48px, 5vw, 68px);
     font-weight: 300;
     line-height: 1;
-    letter-spacing: -0.045em;
-    text-shadow: var(--shadow-text);
+    letter-spacing: -1.8px;
+    text-shadow: var(--text-shadow);
 }
 
 .legal-header p {
-    font-size: clamp(19px, 2vw, 23px);
+    font-size: 21px;
     font-weight: 400;
+    line-height: 1.35;
     color: var(--accent);
-    text-shadow: var(--shadow-text);
+    text-shadow: var(--text-shadow);
 }
 
 .legal-box {
     padding: 34px 38px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border);
     border-radius: 26px;
-    background: rgba(34, 37, 42, 0.44);
+    background: rgba(35, 38, 43, .46);
     backdrop-filter: blur(28px);
     -webkit-backdrop-filter: blur(28px);
 }
@@ -381,7 +364,7 @@ body.legal {
     margin: 24px 0 9px;
     font-size: 21px;
     font-weight: 600;
-    line-height: 1.28;
+    line-height: 1.3;
 }
 
 .legal-box h2:first-child {
@@ -390,24 +373,24 @@ body.legal {
 
 .legal-box p {
     font-size: 16px;
-    line-height: 1.55;
-    color: var(--text-soft);
+    line-height: 1.52;
+    color: rgba(247, 246, 243, .90);
 }
 
 .legal-box a,
 .legal-back {
     color: var(--accent);
     text-decoration: none;
-    transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    transition: opacity .22s ease, color .22s ease, transform .22s ease;
 }
 
 .legal-box a:hover {
-    opacity: 0.78;
+    opacity: .76;
 }
 
 .legal-back {
     display: inline-block;
-    margin-top: 28px;
+    margin-top: 30px;
     font-size: 17px;
     font-weight: 500;
 }
@@ -422,21 +405,28 @@ body.legal {
     left: auto;
     right: auto;
     bottom: auto;
-    margin: 34px var(--page-x) 28px;
+    margin: 36px var(--right) 28px var(--left);
     opacity: 1;
     animation: none;
 }
 
-/* ----------------------------------------------------------
-   Kontaktformular
-   ---------------------------------------------------------- */
+.thanks-footer {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: auto var(--right) 30px var(--left);
+    opacity: 1;
+    animation: none;
+}
 
+/* Kontaktformular */
 .contact-page {
-    width: min(680px, calc(100% - (2 * var(--page-x))));
+    width: min(680px, calc(100% - var(--left) - var(--right)));
 }
 
 .contact-box {
-    padding: 34px 38px 38px;
+    padding: 36px 38px 38px;
 }
 
 .contact-form {
@@ -449,58 +439,58 @@ body.legal {
     margin-top: 7px;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-soft);
+    color: rgba(247, 246, 243, .82);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 15px 17px;
-    border: 1px solid var(--glass-border);
-    border-radius: 17px;
+    border: 1px solid rgba(255, 255, 255, .17);
+    border-radius: 16px;
     outline: none;
     font: inherit;
     color: var(--text);
-    background: rgba(255, 255, 255, 0.075);
+    background: rgba(255, 255, 255, .075);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    transition: border-color .22s ease, background .22s ease, box-shadow .22s ease;
 }
 
 .contact-form textarea {
-    min-height: 165px;
+    min-height: 170px;
     resize: vertical;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: rgba(228, 181, 106, 0.72);
-    background: rgba(255, 255, 255, 0.11);
-    box-shadow: 0 0 0 4px rgba(228, 181, 106, 0.10);
+    border-color: rgba(232, 185, 106, .70);
+    background: rgba(255, 255, 255, .11);
+    box-shadow: 0 0 0 4px rgba(232, 185, 106, .10);
 }
 
 .form-button {
     min-height: 60px;
     margin-top: 17px;
     padding: 0 24px;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border);
     border-radius: 18px;
     font: inherit;
     font-size: 17px;
     font-weight: 500;
     color: var(--text);
-    background: var(--glass);
+    background: var(--panel);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     cursor: pointer;
-    transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    transition: transform .28s ease, background .28s ease, border-color .28s ease, box-shadow .28s ease;
 }
 
 .form-button:hover {
     transform: translateY(-3px);
-    background: var(--glass-hover);
-    border-color: rgba(255, 255, 255, 0.28);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26);
+    background: var(--panel-hover);
+    border-color: var(--border-hover);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, .28);
 }
 
 .thanks-box {
@@ -509,27 +499,12 @@ body.legal {
 
 .thanks-message {
     font-size: 19px;
-    color: var(--text-soft);
+    line-height: 1.5;
+    color: rgba(247, 246, 243, .90);
 }
 
-.thanks-footer {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin-top: auto;
-    margin-left: var(--page-x);
-    margin-right: var(--page-x);
-    margin-bottom: 28px;
-    opacity: 1;
-    animation: none;
-}
-
-/* ----------------------------------------------------------
-   Animationen
-   ---------------------------------------------------------- */
-
-@keyframes zoom {
+/* Animationen */
+@keyframes backgroundZoom {
     from { transform: scale(1.035); }
     to { transform: scale(1); }
 }
@@ -541,60 +516,61 @@ body.legal {
     }
     to {
         opacity: 1;
-        transform: none;
+        transform: translateY(0);
     }
 }
 
-/* ----------------------------------------------------------
-   Tablet
-   ---------------------------------------------------------- */
-
-@media (max-width: 1000px) {
+/* Mittlere Displays */
+@media (max-width: 1100px) {
     .content {
-        padding-top: 110px;
+        width: min(700px, calc(100% - var(--left) - var(--right)));
+        padding-top: 112px;
     }
 
     .motto {
-        font-size: clamp(48px, 7vw, 60px);
+        font-size: clamp(45px, 5.15vw, 58px);
     }
 
     .card {
-        width: 100%;
+        width: min(470px, calc(100vw - var(--left) - var(--right)));
     }
 }
 
-/* ----------------------------------------------------------
-   iPad / kleine Tablets
-   ---------------------------------------------------------- */
-
+/* iPad / kleine Tablets */
 @media (min-width: 701px) and (max-width: 850px) {
+    :root {
+        --left: 34px;
+        --right: 34px;
+    }
+
     .content {
-        width: min(640px, calc(100% - 64px));
-        min-height: 100vh;
-        margin-left: 32px;
-        padding-top: 82px;
-        padding-bottom: 150px;
+        width: min(620px, calc(100% - var(--left) - var(--right)));
+        padding-top: 86px;
+        padding-bottom: 170px;
     }
 
     .hero {
-        margin-bottom: 24px;
+        margin-bottom: 26px;
     }
 
     .brand {
-        margin-bottom: 24px;
+        margin-bottom: 26px;
+        font-size: 20px;
     }
 
     .motto {
-        font-size: 54px;
+        font-size: 50px;
+        line-height: 1.17;
     }
 
     .cards {
-        margin-bottom: 28px;
+        margin-bottom: 34px;
     }
 
     .card {
-        min-height: 84px;
-        padding: 18px 22px;
+        width: min(460px, 100%);
+        min-height: 82px;
+        padding: 16px 22px;
     }
 
     .signature-name {
@@ -606,9 +582,8 @@ body.legal {
     }
 
     .site-footer {
-        position: fixed;
-        left: 32px;
-        right: 32px;
+        left: var(--left);
+        right: var(--right);
         bottom: 22px;
         grid-template-columns: 1fr;
         grid-template-areas: "copy" "tech" "links";
@@ -617,47 +592,34 @@ body.legal {
         text-align: center;
     }
 
-    .footer-copy {
-        grid-area: copy;
-        justify-self: center;
-    }
-
-    .tech-signature {
-        grid-area: tech;
-        justify-self: center;
-    }
-
-    .footer-links {
-        grid-area: links;
-        justify-self: center;
-    }
+    .footer-copy { grid-area: copy; justify-self: center; }
+    .tech-signature { grid-area: tech; justify-self: center; }
+    .footer-links { grid-area: links; justify-self: center; }
 }
 
-/* ----------------------------------------------------------
-   Smartphone
-   ---------------------------------------------------------- */
-
+/* Smartphone */
 @media (max-width: 700px) {
     :root {
-        --page-x: 28px;
+        --left: 28px;
+        --right: 28px;
     }
 
     .background {
-        background-position: 48% center;
+        background-position: 57% center;
     }
 
     .overlay {
         background:
-            radial-gradient(circle at 82% 16%, rgba(255, 195, 118, 0.10), transparent 34%),
-            linear-gradient(90deg, rgba(4, 6, 9, 0.55) 0%, rgba(4, 6, 9, 0.28) 58%, rgba(4, 6, 9, 0.08) 100%),
-            linear-gradient(0deg, rgba(0, 0, 0, 0.56) 0%, rgba(0, 0, 0, 0.20) 32%, rgba(0, 0, 0, 0.02) 60%);
+            radial-gradient(circle at 82% 18%, rgba(255, 202, 126, .08), transparent 34%),
+            linear-gradient(90deg, rgba(9, 11, 14, .50) 0%, rgba(9, 11, 14, .26) 58%, rgba(9, 11, 14, .08) 100%),
+            linear-gradient(0deg, rgba(0, 0, 0, .56) 0%, rgba(0, 0, 0, .20) 30%, rgba(0, 0, 0, .04) 58%);
     }
 
     .content {
         width: auto;
         min-height: auto;
         margin-left: 0;
-        padding: 78px var(--page-x) 0;
+        padding: 78px var(--right) 0 var(--left);
     }
 
     .hero {
@@ -665,25 +627,27 @@ body.legal {
     }
 
     .brand {
-        margin-bottom: 38px;
-        font-size: 20px;
+        margin-bottom: 34px;
+        font-size: 19px;
     }
 
     .motto {
-        font-size: clamp(45px, 13vw, 58px);
-        line-height: 1.13;
-        letter-spacing: -0.04em;
+        max-width: 100%;
+        font-size: clamp(41px, 11.9vw, 54px);
+        line-height: 1.17;
+        letter-spacing: -1.35px;
     }
 
     .cards {
-        margin-bottom: 48px;
+        width: 100%;
+        margin-bottom: 44px;
     }
 
     .card {
-        width: min(100%, 430px);
+        width: 100%;
         min-height: 82px;
         padding: 17px 20px;
-        border-radius: 20px;
+        border-radius: 19px;
         gap: 16px;
     }
 
@@ -693,22 +657,32 @@ body.legal {
     }
 
     .icon img {
-        width: 34px;
+        width: 33px;
     }
 
     .text h2 {
         font-size: 20px;
     }
 
+    .arrow {
+        width: 24px;
+        height: 24px;
+    }
+
     .signature-name {
         margin-bottom: 6px;
-        font-size: 35px;
+        font-size: 36px;
     }
 
     .signature-text {
-        max-width: 440px;
+        max-width: 100%;
         font-size: 15px;
         line-height: 1.42;
+    }
+
+    .photo-location {
+        margin-top: 10px;
+        font-size: .66rem;
     }
 
     .site-footer {
@@ -716,53 +690,24 @@ body.legal {
         left: auto;
         right: auto;
         bottom: auto;
-        margin: 52px var(--page-x) 30px;
+        margin: 54px var(--right) 30px var(--left);
         grid-template-columns: 1fr;
         grid-template-areas: "copy" "tech" "links";
         justify-items: center;
-        gap: 9px;
-        font-size: 13px;
-        line-height: 1.35;
-        text-align: center;
-    }
-
-    .footer-copy {
-        grid-area: copy;
-        justify-self: center;
-        white-space: normal;
-    }
-
-    .tech-signature {
-        grid-area: tech;
-        justify-self: center;
         gap: 8px;
-        max-width: 100%;
+        font-size: 13px;
+        text-align: center;
+        color: rgba(247, 246, 243, .84);
     }
 
-    .footer-links {
-        grid-area: links;
-        justify-self: center;
-        margin-top: 2px;
-    }
+    .footer-copy { grid-area: copy; justify-self: center; white-space: normal; }
+    .tech-signature { grid-area: tech; justify-self: center; gap: 8px; }
+    .footer-links { grid-area: links; justify-self: center; }
 
-    .tech-item {
-        gap: 6px;
-    }
-
-    .tech-item img {
-        width: 17px;
-        height: 17px;
-    }
-
-    .tech-signature .tech-item img.cloudflare-logo {
-        width: 27px;
-    }
-
-    .legal-page,
-    .contact-page {
+    .legal-page {
         width: auto;
         margin-left: 0;
-        padding: 54px var(--page-x) 28px;
+        padding: 54px var(--right) 28px var(--left);
     }
 
     .legal-header {
@@ -770,7 +715,7 @@ body.legal {
     }
 
     .legal-header h1 {
-        margin-bottom: 16px;
+        margin-bottom: 17px;
         font-size: 46px;
     }
 
@@ -784,6 +729,26 @@ body.legal {
         border-radius: 22px;
     }
 
+    .contact-page {
+        width: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px 15px;
+        border-radius: 15px;
+    }
+
+    .form-button {
+        min-height: 56px;
+        border-radius: 16px;
+        font-size: 16px;
+    }
+
+    .thanks-message {
+        font-size: 17px;
+    }
+
     .legal-box h2 {
         font-size: 19px;
     }
@@ -792,62 +757,61 @@ body.legal {
         font-size: 15px;
     }
 
-    .thanks-message {
-        font-size: 17px;
-    }
-
     .legal-site-footer,
     .thanks-footer {
-        margin-left: var(--page-x);
-        margin-right: var(--page-x);
+        margin-left: var(--left);
+        margin-right: var(--right);
     }
 }
 
+/* Sehr kleine Smartphones */
 @media (max-width: 390px) {
     :root {
-        --page-x: 24px;
+        --left: 24px;
+        --right: 24px;
     }
 
     .motto {
-        font-size: 44px;
+        font-size: 42px;
     }
 
     .tech-signature {
         gap: 6px;
     }
+
+    .tech-item {
+        gap: 5px;
+    }
 }
 
-/* ----------------------------------------------------------
-   Kleine Notebook-Höhen
-   ---------------------------------------------------------- */
-
+/* Niedrige Notebook-Höhen */
 @media (max-height: 850px) and (min-width: 851px) {
     .content {
         padding-top: 86px;
         padding-bottom: 150px;
     }
 
-    .brand {
-        margin-bottom: 22px;
-    }
-
-    .motto {
-        font-size: 56px;
-        line-height: 1.09;
-    }
-
     .hero {
-        margin-bottom: 26px;
-    }
-
-    .cards {
         margin-bottom: 28px;
     }
 
+    .brand {
+        margin-bottom: 24px;
+    }
+
+    .motto {
+        font-size: clamp(43px, 3.8vw, 54px);
+        line-height: 1.15;
+    }
+
+    .cards {
+        margin-bottom: 32px;
+    }
+
     .card {
-        min-height: 82px;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        width: 460px;
+        min-height: 80px;
+        padding: 15px 22px;
     }
 
     .signature-name {
@@ -859,11 +823,11 @@ body.legal {
     }
 
     .site-footer {
-        bottom: 24px;
+        bottom: 22px;
     }
 
     .legal-page {
-        padding-top: 54px;
+        padding-top: 56px;
     }
 
     .legal-header {
@@ -871,24 +835,27 @@ body.legal {
     }
 
     .legal-header h1 {
-        font-size: 56px;
+        margin-bottom: 16px;
+        font-size: 54px;
     }
 
     .legal-box {
         padding: 28px 34px;
     }
+
+    .legal-box h2 {
+        margin: 18px 0 7px;
+    }
 }
 
-/* ----------------------------------------------------------
-   Weniger Bewegung
-   ---------------------------------------------------------- */
-
+/* Barrierefreiheit */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
-        animation-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+        animation-duration: .001ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
+        transition-duration: .001ms !important;
     }
 }
