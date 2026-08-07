@@ -118,7 +118,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 42px;
+    margin-bottom: 18px;
     opacity: 0;
     animation: fadeUp .82s ease .30s forwards;
 }
@@ -607,10 +607,6 @@ body.legal {
 
     .background {
         background-position: 57% center;
-    }
-
-    .personal-note {
-        transform: translateY(-30px);
     }
 
     .content {
