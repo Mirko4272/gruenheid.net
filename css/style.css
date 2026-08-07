@@ -1,15 +1,10 @@
-/* ==========================================================
-   gruenheid.net — style.css
-   Neuaufbau August 2026
-   ========================================================== */
-
 :root {
     --text: #f7f6f3;
     --text-soft: rgba(247, 246, 243, .82);
     --text-muted: rgba(247, 246, 243, .58);
     --accent: #d8ad70;
     --panel: rgba(38, 40, 43, .56);
-    --panel-hover: rgba(38, 40, 43, .56);
+    --panel-hover: rgba(48, 50, 54, .64);
     --border: rgba(255, 255, 255, .17);
     --border-hover: rgba(255, 255, 255, .28);
     --left: clamp(28px, 8vw, 132px);
@@ -40,7 +35,6 @@ body {
     background: #000;
 }
 
-/* Hintergrund */
 .background {
     position: fixed;
     inset: 0;
@@ -62,7 +56,6 @@ body {
         linear-gradient(0deg, rgba(0, 0, 0, .36) 0%, rgba(0, 0, 0, .11) 30%, transparent 60%);
 }
 
-/* Startseite */
 .content {
     position: relative;
     z-index: 10;
@@ -237,7 +230,6 @@ body {
     color: var(--accent);
 }
 
-/* Footer */
 .site-footer {
     position: fixed;
     z-index: 20;
@@ -315,7 +307,6 @@ body {
     color: var(--accent);
 }
 
-/* Rechtliche Seiten */
 body.legal {
     min-height: 100vh;
     display: flex;
@@ -421,7 +412,6 @@ body.legal {
     animation: none;
 }
 
-/* Kontaktformular */
 .contact-page {
     width: min(680px, calc(100% - var(--left) - var(--right)));
 }
@@ -504,7 +494,6 @@ body.legal {
     color: rgba(247, 246, 243, .90);
 }
 
-/* Animationen */
 @keyframes backgroundZoom {
     from { transform: scale(1.035); }
     to { transform: scale(1); }
@@ -521,7 +510,6 @@ body.legal {
     }
 }
 
-/* Mittlere Displays */
 @media (max-width: 1100px) {
     .content {
         width: min(700px, calc(100% - var(--left) - var(--right)));
@@ -537,7 +525,6 @@ body.legal {
     }
 }
 
-/* iPad / kleine Tablets */
 @media (min-width: 701px) and (max-width: 850px) {
     :root {
         --left: 34px;
@@ -598,7 +585,6 @@ body.legal {
     .footer-links { grid-area: links; justify-self: center; }
 }
 
-/* Smartphone */
 @media (max-width: 700px) {
     :root {
         --left: 28px;
@@ -761,7 +747,6 @@ body.legal {
     }
 }
 
-/* Sehr kleine Smartphones */
 @media (max-width: 390px) {
     :root {
         --left: 24px;
@@ -781,7 +766,6 @@ body.legal {
     }
 }
 
-/* Niedrige Notebook-Höhen */
 @media (max-height: 850px) and (min-width: 851px) {
     .content {
         padding-top: 86px;
@@ -845,7 +829,6 @@ body.legal {
     }
 }
 
-/* Barrierefreiheit */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
