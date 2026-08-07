@@ -14,7 +14,7 @@
     --border-hover: rgba(255, 255, 255, .28);
     --left: clamp(28px, 8vw, 132px);
     --right: clamp(28px, 8vw, 132px);
-    --text-shadow: 0 3px 18px rgba(0, 0, 0, .55);
+    --text-shadow: 0 4px 22px rgba(0,0,0,.72);
 }
 
 * {
@@ -194,7 +194,7 @@ body {
 }
 
 .personal-note {
-    margin-top: 24px;
+    margin-top: -24px;
     max-width: 620px;
     opacity: 0;
     animation: fadeUp .82s ease .44s forwards;
