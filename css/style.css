@@ -609,6 +609,10 @@ body.legal {
         background-position: 57% center;
     }
 
+    .personal-note {
+        transform: translateY(-30px);
+    }
+
     .content {
         width: auto;
         min-height: auto;
