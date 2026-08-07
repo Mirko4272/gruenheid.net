@@ -194,6 +194,7 @@ body {
 }
 
 .personal-note {
+    margin-top: 24px;
     max-width: 620px;
     opacity: 0;
     animation: fadeUp .82s ease .44s forwards;
