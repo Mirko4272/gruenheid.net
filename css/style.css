@@ -39,7 +39,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: 0;
-    background: url("../assets/hero-background3.webp") center 58% / cover no-repeat;
+    background: url("../assets/hero-background.webp") center 58% / cover no-repeat;
     filter: brightness(1.035) saturate(1.025) sepia(.025);
     transform: scale(1.035);
     animation: backgroundZoom 18s ease-out forwards;
